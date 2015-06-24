@@ -1,0 +1,48 @@
+.header {
+  padding: 1em 0;
+  .logo__container {
+    text-align: center;
+  }
+  .logo {
+    transition: all .2s;
+    &:hover {
+      // transform: rotateY(-360deg);
+    }
+  }
+  .nav {
+    padding: 2em 0;
+    &--left {
+      text-align: right;
+    }
+    &--right {
+      text-align: left;
+    }
+    a {
+      color: @white;
+      margin: 0 1em;
+      font-weight: 100;
+      text-transform: uppercase;
+      font-size: 1.3em;
+      position: relative;
+      display: inline-block;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -0.5em;
+        height: 0;
+        width: 100%;
+        opacity: 0;
+        transition: all 0.2s;
+      }
+      &:hover {
+        text-decoration: none;
+        &:after {
+          opacity: 1;
+          background-color: @brand-orange;
+          height: 5px;
+        }
+      }
+    }
+  }
+}

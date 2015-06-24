@@ -1,0 +1,35 @@
+.tile {
+  background-color: @white;
+  box-shadow: 0 0 5px fade(@black, 20%);
+  max-height: 250px;
+  position: relative;
+  &__img {
+    width: 100%;
+    max-height: 250px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+      transform: translateY(-30%);
+    }
+  }
+  &__caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background-color: fade(@white, 30%);
+    padding: 1em;
+    color: @brand-gray;
+    h1 {
+      font-size: 1.5em;
+    }
+    p {
+      font-size: 1em;
+    }
+  }
+  @media screen and (max-width: @screen-xxs) {
+    margin: 1em auto;
+  }
+}

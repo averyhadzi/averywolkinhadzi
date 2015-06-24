@@ -1,0 +1,46 @@
+// Helper Classes & Mixins
+
+.vertically-center {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.opacity(@opacity) {
+  opacity: @opacity;
+  @opacity-ie: @opacity * 100;
+  filter: ~"alpha(opacity=@{opacity-ie})"; // IE8
+}
+
+.bg-img(@path) {
+  filter: ~"alpha(src=@{@path}, sizingMethod='scale')";
+  -ms-filter: ~"alpha(src=@{@path}, sizingMethod='scale')";
+  background-image: url(@path);
+}
+
+.two-col {
+  -webkit-columns: 300px 2;
+     -moz-columns: 300px 2;
+          columns: 300px 2;
+}
+
+.three-col {
+  -webkit-columns: 300px 3;
+     -moz-columns: 300px 3;
+          columns: 300px 3;
+}
+
+.border-left {
+  border-left: 1px solid fade(@white, 20%);
+  @media screen and (max-width: @screen-xxs) {
+    border: none;
+  }
+}
+.border-right {
+  border-right: 1px solid fade(@white, 20%);
+  @media screen and (max-width: @screen-xxs) {
+    border: none;
+  }
+}
